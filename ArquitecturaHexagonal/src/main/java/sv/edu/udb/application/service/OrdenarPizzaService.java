@@ -1,5 +1,7 @@
 package sv.edu.udb.application.service;
 
+import lombok.Getter;
+import lombok.Setter;
 import sv.edu.udb.application.etc.UseCase;
 import sv.edu.udb.application.port.OrdenRepository;
 import sv.edu.udb.application.port.OrdenarPizza;
@@ -12,6 +14,7 @@ import sv.edu.udb.model.TarjetaCredito;
 import java.util.UUID;
 
 //@UseCase
+@Getter
 public class OrdenarPizzaService implements OrdenarPizza {
     private final OrdenRepository ordenRepo;
     private final PagoRepository pagoRepo;
@@ -21,7 +24,7 @@ public class OrdenarPizzaService implements OrdenarPizza {
         this.pagoRepo = pagoRepo;
     }
 
-    private Orden getOrden(UUID id) {
+    public Orden getOrden(UUID id) {
         return ordenRepo.findById(id);
     }
 

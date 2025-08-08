@@ -1,5 +1,6 @@
 package sv.edu.udb.application.service;
 
+import lombok.NoArgsConstructor;
 import sv.edu.udb.application.port.OrdenRepository;
 import sv.edu.udb.model.Orden;
 
@@ -7,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+@NoArgsConstructor
 public class OrdenRepoService implements OrdenRepository {
     private final Map<UUID, Orden> ordenes = new HashMap<>();
 
